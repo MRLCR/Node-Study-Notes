@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>知乎 - 个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <style>
+        .user {
+            padding: 1em;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, .2);
+        }
+        .article {
+            margin-top: 1em;
+            font-size: 18px;
+        }
+        .comments {
+            padding: 1em 2em;
+            border: 1px solid #999;
+            font-size: 16px;
+        }
+        .comment {
+            margin-top: 1em;
+            padding: .5em;
+            background-color: rgba(255, 0, 0, .2);
+        }
+        .btn {
+            padding: 0 10px;
+            border-radius: 6px;
+            border-color: transparent;
+            background-color: rgba(0, 132, 255,.1);
+            color: #0084ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="user">
+            <div class="nickname">
+                <span>昵称：${user.nickname}</span>
+            </div>
+            <div class="labels">
+                <span>标签：${user.labels}</span>
+            </div>
+            <div class="introduction">
+                <span>个人简介：${user.introduction}</span>
+            </div>
+        </div>
+        <div class="article">
+            <p>
+                ${article.content}
+            </p>
+            <div class="comments-title">
+                <span>评论区：</span>
+            </div>
+            <div class="comments">
+                ${article.comments.map(comment => `
+                    <div class="comment">
+                        <div class="nickname">
+                            <span>昵称：${comment.user.nickname}</span>
+                        </div>
+                        <div>
+                            <span>评论内容：${comment.content}</span>
+                        </div>
+                        <div>
+                            <span>点赞数：${comment.praiseNum}</span>
+                        </div>
+                        <div>
+                            <button class="btn">点赞</button>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>
+</body>

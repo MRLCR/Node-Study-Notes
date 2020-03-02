@@ -1,0 +1,22 @@
+type User {
+    id: Int,
+    peopleId: Int,
+    nickname: String,
+    labels: String,
+    introduction: String,
+}
+
+type Comment {
+    id: Int,
+    user: User,
+    content: String,
+    praiseNum: Int,
+}
+
+type Query {
+    comments(articleId: Int): [Comment]
+}
+
+type Mutation {
+    praise(commentId: Int): Int
+}

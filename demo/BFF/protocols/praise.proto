@@ -1,0 +1,8 @@
+message PraiseRequest {
+    required int32 commentId = 1;
+}
+
+message PraiseResponse {
+    required int32 commentId = 1;
+    required int32 praiseNum = 2;
+}

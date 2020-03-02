@@ -1,0 +1,36 @@
+{
+  "name": "vue-isormorphism",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./node/index.js",
+    "clear": "rimraf ./dist/",
+    "build": "npm run clear & npm run build:client && npm run build:server",
+    "build:client": "webpack --config ./build/webpack.client.conf.js",
+    "build:server": "webpack --config ./build/webpack.server.conf.js"
+  },
+  "keywords": [],
+  "author": "mu.xia",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "vue": "^2.6.11",
+    "vue-server-renderer": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "rimraf": "^3.0.2",
+    "vue-loader": "^15.9.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  }
+}

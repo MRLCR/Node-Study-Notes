@@ -1,0 +1,51 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.result-record {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    border: 1px solid #333;
+    font-size: 20px;
+    color: #333;
+    overflow: scroll;
+}
+.result-record-label {
+    margin-left: 1em;
+    display: inline-block;
+}
+.result-record-directive {
+    width: 2em;
+    display: inline-block;
+}
+.loading {
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.actions {
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.btn {
+    width: 98px;
+    height: 40px;
+    margin: 0 15px;
+    line-height: 40px;
+    border-radius: 4px;
+    border: 0;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    background-color: #409eff;
+    color: #fff;
+    cursor: pointer;
+}

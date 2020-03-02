@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 同构</title>
+    <style>
+        body {
+            background-color: #f6f6f6;
+        } 
+    </style>
+</head>
+<body>
+    <div id="app" class="main">
+        <!--vue-ssr-outlet-->
+    </div>
+    <script>
+       window.initData = {{{ initData.list ? JSON.stringify(initData.list) : '' }}};
+       window.initSort = {{{ initData.sort || 0 }}};
+       window.initType = {{{ initData.type || 0 }}};
+    </script>
+</body>
+</html>

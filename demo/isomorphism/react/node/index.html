@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react 同构</title>
+    <style>
+        body {
+            background-color: #f6f6f6;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .list {
+            width: 700px;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+        .filter {
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid #f0f2f7;
+        }
+        .btn, .select{
+            height: 30px;
+            padding: 0 12px;
+            line-height: 30px;
+            border-radius: 3px;
+            text-align: center;
+            border-color: transparent;
+            background-color: rgba(0, 132, 255, .1);
+            font-size: 14px;
+            color: #0084ff;
+            cursor: pointer;
+        }
+        .btn:focus, .select:focus {
+            outline: 0;
+        }
+        .type {
+            margin-left: 24px;
+        }
+        .internet-post {
+            padding: 20px;
+            border-bottom: 1px solid #f0f2f7;
+        }
+        .title {
+            line-height: 1.6;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .content {
+            margin-top: 16px;
+            cursor: pointer;
+            transition: color .14s ease-out;
+        }
+        .content:hover {
+            color: #646464;
+        }
+        .other {
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .comment-num {
+            margin-left: 24px;
+            font-size: 14px;
+            color: #646464;
+        }
+        .no-more {
+            padding: 10px 0;
+            text-align: center;
+            font-size: 16px;
+            color: #646464;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="main">${stringRenderedByNode}</div>
+
+    <script>
+       window.initData = ${reactData ? JSON.stringify(reactData) : ''};
+       window.initSort = ${sort || 0};
+       window.initType = ${type || 0};
+    </script>
+    <script src="./static/main.js"></script>
+</body>
+</html>

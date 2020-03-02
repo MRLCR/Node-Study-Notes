@@ -1,0 +1,22 @@
+# Dependency directory
+node_modules
+**/node_modules
+
+# Optional npm cache directory
+.npm
+package-lock.json
+**/package-lock.json
+
+# idea
+.vscode
+
+# build
+
+**/dist
+
+# unnecessary dir
+
+share
+notes
+geektime
+*.md

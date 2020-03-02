@@ -1,0 +1,23 @@
+message User {
+    required uint32 id = 1;
+    required uint32 peopleId = 2;
+    required string nickname = 4;
+    required string labels = 5;
+    required string introduction = 6;
+}
+
+message Comments {
+    required int32 id = 1;
+    required int32 articleId = 2;
+    required User user = 3;
+    required string content = 4;
+    required int32 praiseNum = 5;
+}
+
+message CommentsRequest {
+    repeated int32 articleId = 1;
+}
+
+message CommentsResponse {
+    repeated Comments comments = 1;
+}
