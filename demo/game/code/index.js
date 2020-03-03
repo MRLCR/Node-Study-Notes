@@ -2,6 +2,7 @@ const directiveLib = require('./directiveLib');
 
 /**
  * 模拟计算机的出拳
+ * @returns {number}
  */
 const createComputerAction = () => Math.floor(Math.random() * 3);
 
@@ -9,6 +10,7 @@ const createComputerAction = () => Math.floor(Math.random() * 3);
  * 对决规则
  * @param {number} user1 用户1出拳
  * @param {number} user2 用户2出拳
+ * @returns {string}
  */
 const rules = (user1, user2) => {
     if (user1 === user2) {
@@ -22,6 +24,7 @@ const rules = (user1, user2) => {
 /**
  * 游戏对决
  * @param {number} userAction 用户出拳
+ * @returns {object | string}
  */
 const battle = (userAction) => {
     if (directiveLib.has(userAction)) {
