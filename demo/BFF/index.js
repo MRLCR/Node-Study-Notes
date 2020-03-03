@@ -10,7 +10,7 @@ const rpcClient = require('./client/base');
 const app = new koa();
 const createPath = (path) => `${__dirname}/${path}`;
 
-const getHtml = (path) => fs.readFileSync(createPath(`/static/${path}`), 'utf-8')
+const getHtml = (path) => fs.readFileSync(createPath(`static/source/${path}`), 'utf-8')
 const getTpl = (path) => template(createPath(`views/${path}`));
 
 // 静态资源
