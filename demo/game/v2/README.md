@@ -10,6 +10,7 @@ node server.js
 
 # 目录说明
 
+```
 ├── code
 |  ├── directiveLib.js          操作指令集
 |  └── index.js                 核心代码
@@ -21,3 +22,4 @@ node server.js
    ├── index.html               页面结构
    ├── index.js                 页面脚本
    └── server.js                http server
+```
