@@ -10,7 +10,10 @@ const rpcClient = require('./client/base');
 const app = new koa();
 const createPath = (path) => `${__dirname}/${path}`;
 
-const getHtml = (path) => fs.readFileSync(createPath(`static/source/${path}`), 'utf-8')
+// 未优化的
+// const getHtml = (path) => fs.readFileSync(createPath(`static/source/${path}`), 'utf-8');
+// v2 优化的
+const getHtmlBuffer = (path) => fs.readFileSync(createPath(`static/source/${path}`));
 const getTpl = (path) => template(createPath(`views/${path}`));
 
 // 静态资源
@@ -26,11 +29,33 @@ app.use(
 )
 
 // router
+/**------ 性能优化前 start -------*/
+// app.use(
+//     mount('/login', async (ctx) => {
+//         ctx.body = getHtml('index.html')
+//     })
+// );
+/**------ 性能优化前 end -------*/
+
+/**------ 性能优化 v1 start -------*/
+// const loginHtml = getHtml('index.html');
+// app.use(
+//     mount('/login', async (ctx) => {
+//         ctx.body = loginHtml;
+//     })
+// );
+/**------ 性能优化 v1 start -------*/
+
+/**------ 性能优化 v2 start -------*/
+const loginHtmlBuffer = getHtmlBuffer('index.html');
 app.use(
     mount('/login', async (ctx) => {
-        ctx.body = getHtml('index.html')
+        ctx.body = loginHtmlBuffer;
+        ctx.status = 200;
+        ctx.type = 'html';
     })
 );
+/**------ 性能优化 v2 start -------*/
 
 app.use(
     mount('/home', async (ctx) => {

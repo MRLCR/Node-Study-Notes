@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node ./index.js",
-    "server:profile": "node --prof ./index.js"
+    "server:profile": "node --prof ./index.js",
+    "server:devtool": "node --inspect-brk ./index.js"
   },
   "keywords": [],
   "author": "",
