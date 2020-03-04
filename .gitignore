@@ -19,4 +19,4 @@ package-lock.json
 share
 notes
 geektime
-*.md
+koa/**/*.md
