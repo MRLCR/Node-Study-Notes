@@ -6,7 +6,7 @@ window.onload = function() {
 }
 
 /**
- * 后去dom节点
+ * 获取dom节点
  * @param {string} selectors 节点选择器
  * @returns {Element}
  */
