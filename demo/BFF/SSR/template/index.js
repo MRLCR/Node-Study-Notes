@@ -15,6 +15,7 @@ const templateContext = vm.createContext({
 /**
  * 创建模板
  * @param {string} templatePath 模板路径
+ * @returns {function}
  */
 function createTemplate(templatePath) {
     templateCache[templatePath] = vm.runInContext(
