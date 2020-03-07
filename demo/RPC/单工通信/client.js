@@ -10,7 +10,8 @@ socket.connect({
 
 /**
  * 数据打包
- * @param {string} bookId 
+ * @param {string} bookId
+ * @returns {buffer}
  */
 const encode = (bookId) => {
     const buffer = Buffer.alloc(2);
