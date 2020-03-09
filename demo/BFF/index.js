@@ -5,7 +5,7 @@ const static    = require('koa-static');
 const gqlHttp   = require('koa-graphql');
 
 const template  = require('./SSR/template/index');
-const rpcClient = require('./client/base');
+const rpcClient = require('./client/index');
 
 const app = new koa();
 const createPath = (path) => `${__dirname}/${path}`;
