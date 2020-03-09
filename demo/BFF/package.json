@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node ./index.js",
-    "server:profile": "node --prof ./index.js",
-    "server:devtool": "node --inspect-brk ./index.js"
+    "start": "npm run client & npm run server",
+    "client": "node ./index.js",
+    "server": "node ./server/index.js",
+    "client:profile": "node --prof ./index.js",
+    "client:devtool": "node --inspect-brk ./index.js"
   },
   "keywords": [],
   "author": "",
